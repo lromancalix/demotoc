@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toc 2</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- <link
+      rel="stylesheet"
+      href="./assets/style/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/style/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/style/animated.css" />
+    <link rel="stylesheet" href="./assets/style/hover.css" /> -->
+  </head>
+  <body>
+    <h1>Hola mundos</h1>
+
+    <div
+      id="liveness"
+      style="
+        width: 500px;
+        height: 400px;
+        border: solid 2px black;
+        background-color: red;
+      "
+    ></div>
+
+    <input type="text" id="txt-token" />
+    <input type="button" id="btn" value="click me!" />
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+    ></script>
+    <!-- <script
+      src="./assets/js/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script> -->
+
+    <script src="https://sandbox-web-plugins.s3.amazonaws.com/liveness/js/liveness.js"></script>
+    <script src="https://sandbox-web-plugins.s3.amazonaws.com/autocapture/autocapture.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@0.7.18/src/uaparser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webrtcadapter/6.2.1/adapter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/siema@1.5.1/dist/siema.min.js"></script> -->
+
+    <script>
+      $(document).ready(function () {
+
+        $("#btn").click(function () {
+          
+          //alert("click");
+          // $("#liveness").liveness({
+          //   locale: "es",
+          //   session_id: $("#toctoken").value(),
+          //   http: true,
+          //   callback: function (token) {
+          //     alert(token);
+          //   },
+          //   failure: function (error) {
+          //     alert(error);
+          //   },
+          // });
+
+          $("#liveness").liveness({
+            locale: "es",
+            session_id: $("#txt-token").val(),
+            http: true,
+            callback: function (token) {
+              alert(token);
+            },
+            failure: function (error) {
+              alert(error);
+            },
+          });
+
+          //alert( $("#txt-token").val() );
+
+          //$("#toctoken").val()
+
+
+        });
+
+        // $("#btn").click(function () {
+        //   $("#liveness").autocapture({
+        //     locale: "es",
+        //     session_id: $("#toctoken").value(),
+        //     document_type: "CHL2",
+        //     document_side: "front",
+        //     http: true,
+        //     callback: function (token, image) {
+        //       alert(token);
+        //     },
+        //     failure: function (error) {
+        //       alert(error);
+        //     },
+        //   });
+        // });
+      });
+    </script>
+  </body>
+</html>
